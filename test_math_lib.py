@@ -11,6 +11,13 @@ class TestMathLib(unittest.TestCase):
         self.empty_list = []
         self.int_static_list = [1, 2, 3, 4, 5, 6]
         self.float_static_list = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6]
+        
+    # test if the list is empty
+    def test_none(self):
+        self.assertRaises(ValueError,
+                          math_lib.list_mean, None)
+        self.assertRaises(ValueError,
+                          math_lib.list_stdev, None)
 
     # test if the list is empty
     def test_empty_list(self):
