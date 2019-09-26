@@ -1,5 +1,6 @@
 import math
 
+
 def list_mean(V):
     """
     Calculate the mean of an input list
@@ -18,6 +19,7 @@ def list_mean(V):
     except ZeroDivisionError as error:
         raise ZeroDivisionError('ZeroDivisionError: V has len 0')
     return mean
+
 
 def list_stdev(V):
     """
