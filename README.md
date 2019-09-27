@@ -10,8 +10,8 @@ $ bash gen_data.sh | python viz.py --plot_type=${TYPE} --out_file=${NAME} --col_
 ```shell
 $ python viz.py --plot_type=${TYPE} --out_file=${NAME} --col_num=${NUM}
 ```
-TYPE: should be one of the following - boxplot, histogram, combo
-NAME: file name of your output
+TYPE: should be one of the following - boxplot, histogram, combo\
+NAME: file name of your output\
 NUM: a valid column number. Should be in range (0, len(input_line)-1)
 
 ### math_lib:
