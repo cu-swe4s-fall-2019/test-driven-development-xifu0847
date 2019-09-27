@@ -12,5 +12,10 @@ before_install:
     - conda install --yes python=3.6
       
 script:
-    - bash test_viz.sh
-    - python test_viz.py
+    - pycodestyle *.py
+    - python -m unittest test_math_lib.py
+    - python -m unittest test_get_data.py
+    - python -m unittest test_data_viz.py
+    - bash gen_data.sh | python viz.py --plot_type=boxplot --out_file=boxplot.png --col_num=0
+    - bash gen_data.sh | python viz.py --plot_type=histogram --out_file=histogram.png --col_num=0
+    - bash gen_data.sh | python viz.py --plot_type=combo --out_file=combo.png --col_num=0

@@ -22,6 +22,8 @@ class TestDataViz(unittest.TestCase):
             os.remove('test_histogram.png')
         if os.path.exists('test_combo.png'):
             os.remove('test_combo.png')
+        if os.path.exists('test_already_exists.png'):
+            os.remove('test_already_exists.png')
 
     # test boxplot
     def test_boxplot(self):
@@ -40,6 +42,12 @@ class TestDataViz(unittest.TestCase):
         self.assertFalse(os.path.exists('test_combo.png'))
         data_viz.combo(self.testdata, 'test_combo.png')
         self.assertTrue(os.path.exists('test_combo.png'))
+
+    # test already exists
+    def test_already_exist(self):
+        data_viz.boxplot(self.testdata, 'test_already_exists.png')
+        self.assertRaises(FileExistsError, data_viz.boxplot,
+                          self.testdata, 'test_already_exists.png')
 
 
 if __name__ == '__main__':
