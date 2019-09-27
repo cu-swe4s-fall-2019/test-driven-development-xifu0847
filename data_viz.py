@@ -1,7 +1,8 @@
+import math_lib
+import os
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import math_lib
 
 
 def boxplot(L, out_file_name):
@@ -13,6 +14,9 @@ def boxplot(L, out_file_name):
     out_file_name: The file name for the output figure
 
     """
+    if os.path.exists(out_file_name):
+        raise FileExistsError('File already exists.')
+
     mean = math_lib.list_mean(L)
     stdev = math_lib.list_stdev(L)
     fig = plt.figure(dpi=300)
@@ -20,7 +24,8 @@ def boxplot(L, out_file_name):
     ax = fig.add_subplot(1, 1, 1)
     plt.boxplot(L)
     plt.title("mean: {} stdev: {}".format(mean, stdev))
-    plt.ylabel('Value')
+    plt.ylabel('Box')
+    plt.ylabel('Distribution')
     plt.show()
     plt.savefig(out_file_name)
 
@@ -34,6 +39,9 @@ def histogram(L, out_file_name):
     out_file_name: The file name for the output figure
 
     """
+    if os.path.exists(out_file_name):
+        raise FileExistsError('File already exists.')
+
     mean = math_lib.list_mean(L)
     stdev = math_lib.list_stdev(L)
     fig = plt.figure(dpi=300)
@@ -56,6 +64,9 @@ def combo(L, out_file_name):
     out_file_name: The file name for the output figure
 
     """
+    if os.path.exists(out_file_name):
+        raise FileExistsError('File already exists.')
+
     mean = math_lib.list_mean(L)
     stdev = math_lib.list_stdev(L)
     fig = plt.figure(dpi=300)
@@ -63,7 +74,8 @@ def combo(L, out_file_name):
     ax = fig.add_subplot(2, 1, 1)
     plt.boxplot(L)
     plt.title("mean: {} stdev: {}".format(mean, stdev))
-    plt.ylabel('Value')
+    plt.ylabel('Box')
+    plt.ylabel('Distribution')
     plt.savefig(out_file_name)
 
     ax = fig.add_subplot(2, 1, 2)
