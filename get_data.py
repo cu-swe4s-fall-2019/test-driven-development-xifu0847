@@ -4,10 +4,10 @@ import sys
 def read_stdin_col(col_num):
     """
     Store an array of numbers selected at col_num position
-    
+
     Parameters:
     col_num: The 0-based index of number you want to add
-    
+
     Return:
     An array of numbers in integer or float format
     """

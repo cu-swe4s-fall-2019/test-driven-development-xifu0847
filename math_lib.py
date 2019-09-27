@@ -4,10 +4,10 @@ import math
 def list_mean(V):
     """
     Calculate the mean of an input list
-    
+
     Parameters:
     V: A list of numbers in integer or float format
-    
+
     Return:
     mean: A integer of float type number
     """
@@ -24,10 +24,10 @@ def list_mean(V):
 def list_stdev(V):
     """
     Calculate the stdev of an input list
-    
+
     Parameters:
     V: A list of numbers in integer or float format
-    
+
     Return:
     stdev: A integer of float type number
     """
